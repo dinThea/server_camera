@@ -31,6 +31,6 @@ def main():
         # Read stream
         urllib.URLopener().retrieve('https://s3.amazonaws.com/hctn/after.jpg', 'after.jpg')
         img = cv.imread('after.jpg')
-        cv.imshow('after', img)
+        # cv.imshow('after', img)
 
 main()
