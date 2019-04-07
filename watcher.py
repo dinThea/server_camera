@@ -14,13 +14,12 @@ aws_secret_access_key=ACCESS_SECRET_KEY,
 config=Config(signature_version='s3v4')
 )
 
-cap = cv.VideoCapture(5)
+cap = cv.VideoCapture(1)
 
 while True:
     ret, frame = cap.read()
-    print (frame)
     cv.imwrite('before.jpg', frame)
 
     s3_resource.Object(bucket_name, 'before.jpg').upload_file(Filename='before.jpg')
     time.sleep(0.01)
-    
+
